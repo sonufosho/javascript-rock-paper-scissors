@@ -77,3 +77,20 @@ function resetScore() {
   console.log('Score was reset.');
   console.log(score);
 }
+
+let intervalId;
+let isAutoPlaying = false;
+
+function autoPlay() {
+  if (!isAutoPlaying) {
+    intervalId = setInterval(() => {
+      const computerMove = pickComputerMove();
+      playGame(computerMove);
+    }, 1500);
+    isAutoPlaying = true;
+    
+  } else {
+    clearInterval(intervalId);
+    isAutoPlaying = false;
+  }
+}
