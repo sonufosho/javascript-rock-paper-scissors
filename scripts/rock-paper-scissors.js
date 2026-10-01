@@ -63,8 +63,14 @@ function playGame(playerMove) {
     }
   }
 
-  console.log(result);
-  console.log(score);
+  document.querySelector('.js-moves')
+    .innerHTML = `You ${playerMove} - ${computerMove} Computer`;
+
+  document.querySelector('.js-result')
+    .innerHTML = result;
+
+  document.querySelector('.js-score')
+    .innerHTML = `Wins: ${score.wins} Losses: ${score.losses} Ties: ${score.ties}`;
 }
 
 function resetScore() {
@@ -74,8 +80,11 @@ function resetScore() {
     ties: 0
   };
 
-  console.log('Score was reset.');
-  console.log(score);
+  document.querySelector('.js-result')
+    .innerHTML = 'Score was reset.';
+  
+  document.querySelector('.js-score')
+    .innerHTML = `Wins: ${score.wins} Losses: ${score.losses} Ties: ${score.ties}`;
 }
 
 let intervalId;
