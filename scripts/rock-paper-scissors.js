@@ -66,3 +66,14 @@ function playGame(playerMove) {
   console.log(result);
   console.log(score);
 }
+
+function resetScore() {
+  score = {
+    wins: 0,
+    losses: 0,
+    ties: 0
+  };
+
+  console.log('Score was reset.');
+  console.log(score);
+}
