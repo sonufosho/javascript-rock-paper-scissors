@@ -91,15 +91,20 @@ let intervalId;
 let isAutoPlaying = false;
 
 function autoPlay() {
+  const autoPlayButtonElem = document.querySelector('.js-auto-play-button');
+  
   if (!isAutoPlaying) {
     intervalId = setInterval(() => {
       const computerMove = pickComputerMove();
       playGame(computerMove);
     }, 1500);
+
+    autoPlayButtonElem.innerHTML = 'Stop playing';
     isAutoPlaying = true;
     
   } else {
     clearInterval(intervalId);
+    autoPlayButtonElem.innerHTML = 'Auto play';
     isAutoPlaying = false;
   }
 }
