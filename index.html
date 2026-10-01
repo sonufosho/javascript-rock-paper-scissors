@@ -6,23 +6,36 @@
   <title>Rock Paper Scissors</title>
 
   <link rel="stylesheet" href="styles/rock-paper-scissors.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 </head>
 <body>
-  <p>Rock Paper Scissors</p>
+  <p class="title">Rock Paper Scissors</p>
 
-  <div>
-    <button class="js-rock-button">Rock</button>
-    <button class="js-paper-button">Paper</button>
-    <button class="js-scissors-button">Scissors</button>
+  <div class="flex-row-container">
+    <button class="js-rock-button moves-button">
+      <img src="images/rock.png">
+    </button>
+    <button class="js-paper-button moves-button">
+      <img src="images/paper.png">
+    </button>
+    <button class="js-scissors-button moves-button">
+      <img src="images/scissors.png">
+    </button>
   </div>
 
-  <p class="js-moves"></p>
-  <p class="js-result"></p>
-  <p class="js-score"></p>
+  <div class="flex-column-container">
+    <p class="js-moves moves"></p>
+    <p class="js-result result"></p>
+    <p class="js-score score"></p>
+  </div>
 
-  <div>
-    <button class="js-reset-score-button">Reset score</button>
-    <button class="js-auto-play-button">Auto play</button>
+  <div class="flex-row-container">
+    <button class="js-reset-score-button reset-score-button">Reset score</button>
+    <button class="js-auto-play-button auto-play-button">Auto play</button>
   </div>
   
   <script src="scripts/rock-paper-scissors.js"></script>
