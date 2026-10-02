@@ -89,9 +89,7 @@ function playGame(playerMove) {
   }
 
   document.querySelector('.js-moves')
-    .innerHTML = `<div class="moves-container">
-      You <img class="picked-moves" src="images/${playerMove}.png"> - <img class="picked-moves" src="images/${computerMove}.png"> Computer
-    </div>`;
+    .innerHTML = `You <img class="picked-moves" src="images/${playerMove}.png"> - <img class="picked-moves" src="images/${computerMove}.png"> Computer`;
 
   document.querySelector('.js-result')
     .innerHTML = result;
