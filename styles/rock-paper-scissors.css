@@ -64,7 +64,7 @@ button {
   justify-content: center;
 }
 
-.picked-moves {
+.moves img {
   height: 60px;
 }
 
@@ -96,4 +96,23 @@ button {
   border: none;
   padding: 11px 22px;
   border-radius: 9999px;
+}
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 32px;
+    margin-top: 60px;
+  }
+
+  .moves-button {
+    border: none;
+  }
+
+  .moves img {
+    height: 40px;
+  }
+
+  .result {
+    margin: 20px 0;
+  }
 }
