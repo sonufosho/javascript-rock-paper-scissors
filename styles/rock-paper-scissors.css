@@ -1,15 +1,10 @@
 :root {
   --color-primary-50: #eff6ff;
-  --color-primary-100: #dbeafe;
-  --color-primary-200: #bfdbfe;
-  --color-primary-300: #93c5fd;
-  --color-primary-400: #60a5fa;
   --color-primary-500: #0066cc;
-  --color-primary-600: #2563eb;
-  --color-primary-700: #1d4ed8;
-  --color-primary-800: #1e40af;
-  --color-primary-900: #1e3a8a;
   --color-primary-950: #172554;
+  --color-green-500: #22c55e;
+  --color-red-500: #ef4444;
+  --color-yellow-500: #eab308;
 }
 
 body {
@@ -34,8 +29,7 @@ button {
   font-size: 56px;
   font-weight: 600;
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin: 20px 0;
 }
 
 .flex-row-container {
@@ -75,17 +69,38 @@ button {
   gap: 20px;
   font-size: 20px;
   margin-top: 40px;
-  margin-bottom: 20px;
 }
 
 .result {
   font-size: 32px;
   font-weight: 600;
+  margin: 40px 0;
+}
+
+.result-green {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-green-500);
+  padding: 0 12px;
+  border-radius: 8px;
+}
+
+.result-red {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-red-500);
+  padding: 0 12px;
+  border-radius: 8px;
+}
+
+.result-yellow {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-yellow-500);
+  padding: 0 12px;
+  border-radius: 8px;
 }
 
 .score {
   font-size: 20px;
-  margin: 20px 0;
+  margin-bottom: 20px;
 }
 
 .reset-score-button,
@@ -113,6 +128,6 @@ button {
   }
 
   .result {
-    margin: 20px 0;
+    margin: 60px 0;
   }
 }

@@ -89,7 +89,9 @@ function playGame(playerMove) {
   }
 
   document.querySelector('.js-moves')
-    .innerHTML = `You <img class="picked-moves" src="images/${playerMove}.png"> - <img class="picked-moves" src="images/${computerMove}.png"> Computer`;
+    .innerHTML = `You <img src="images/${playerMove}.png"> - <img src="images/${computerMove}.png"> Computer`;
+
+  resultColor(result);
 
   document.querySelector('.js-result')
     .innerHTML = result;
@@ -104,6 +106,8 @@ function resetScore() {
     losses: 0,
     ties: 0
   };
+
+  removeResultColors();
 
   document.querySelector('.js-result')
     .innerHTML = 'Score was reset.';
@@ -132,4 +136,28 @@ function autoPlay() {
     autoPlayButtonElem.innerHTML = 'Auto play';
     isAutoPlaying = false;
   }
+}
+
+function resultColor(result) {
+  const resultMessageElem = document.querySelector('.js-result');
+
+  removeResultColors();
+
+  if (result === 'You win') {
+      resultMessageElem.classList.add('result-green');
+  } else if (result === 'You lose') {
+    resultMessageElem.classList.add('result-red');
+  } else if (result === 'Tie') {
+    resultMessageElem.classList.add('result-yellow');
+  } else {
+    removeResultColors();
+  }
+}
+
+function removeResultColors() {
+  const resultMessageElem = document.querySelector('.js-result');
+
+  resultMessageElem.classList.remove('result-green');
+  resultMessageElem.classList.remove('result-red');
+  resultMessageElem.classList.remove('result-yellow');
 }
