@@ -21,7 +21,23 @@ document.querySelector('.js-scissors-button')
 
 document.querySelector('.js-reset-score-button')
   .addEventListener('click', () => {
+    showResetConfirmation();
+  });
+
+  document.querySelector('.js-modal-close-button')
+    .addEventListener('click', () => {
+      hideResetConfirmation();
+    });
+
+document.querySelector('.js-modal-button-cancel')
+  .addEventListener('click', () => {
+    hideResetConfirmation();
+  });
+
+document.querySelector('.js-modal-button-reset')
+  .addEventListener('click', () => {
     resetScore();
+    hideResetConfirmation();
   });
 
 document.querySelector('.js-auto-play-button')
@@ -44,7 +60,6 @@ function pickComputerMove() {
 
   return computerMove;
 }
-
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
@@ -111,7 +126,7 @@ function resetScore() {
 
   document.querySelector('.js-result')
     .innerHTML = 'Score was reset.';
-  
+
   document.querySelector('.js-score')
     .innerHTML = `Wins: ${score.wins} Losses: ${score.losses} Ties: ${score.ties}`;
 }
@@ -160,4 +175,14 @@ function removeResultColors() {
   resultMessageElem.classList.remove('result-green');
   resultMessageElem.classList.remove('result-red');
   resultMessageElem.classList.remove('result-yellow');
+}
+
+function showResetConfirmation() {
+  document.querySelector('.js-modal')
+    .classList.add('modal-active');
+}
+
+function hideResetConfirmation() {
+  document.querySelector('.js-modal')
+    .classList.remove('modal-active');
 }

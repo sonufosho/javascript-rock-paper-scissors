@@ -37,6 +37,33 @@
     <button class="js-reset-score-button reset-score-button">Reset score</button>
     <button class="js-auto-play-button auto-play-button">Auto play</button>
   </div>
+
+  <div class="modal js-modal">
+    <div class="modal-content">
+      <div class="modal-head">
+        <p class="modal-head-title" id="reset-modal-title">
+          Reset Score?
+        </p>
+
+        <button class="modal-close-button js-modal-close-button">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-body-title">
+          This cannot be undone.
+        </p>
+      </div>
+      <div class="modal-foot">
+        <button class="modal-button-cancel js-modal-button-cancel" type="button">
+          Cancel
+        </button>
+        <button class="modal-button-reset js-modal-button-reset" type="button">
+          Reset
+        </button>
+      </div>
+    </div>
+  </div>
   
   <script src="scripts/rock-paper-scissors.js"></script>
 </body>

@@ -1,4 +1,5 @@
 :root {
+  --color-primary-15: #eff6ff26;
   --color-primary-50: #eff6ff;
   --color-primary-500: #0066cc;
   --color-primary-950: #172554;
@@ -41,7 +42,7 @@ button {
 
 .moves-button {
   background-color: transparent;
-  border: 3px solid #eff6ff;
+  border: 3px solid var(--color-primary-50);
   height: 160px;
   width: 160px;
   border-radius: 50%;
@@ -78,21 +79,21 @@ button {
 }
 
 .result-green {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--color-primary-15);
   color: var(--color-green-500);
   padding: 0 12px;
   border-radius: 8px;
 }
 
 .result-red {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--color-primary-15);
   color: var(--color-red-500);
   padding: 0 12px;
   border-radius: 8px;
 }
 
 .result-yellow {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--color-primary-15);
   color: var(--color-yellow-500);
   padding: 0 12px;
   border-radius: 8px;
@@ -111,6 +112,96 @@ button {
   border: none;
   padding: 11px 22px;
   border-radius: 9999px;
+}
+
+.modal {
+  backdrop-filter: saturate(180%) blur(20px);
+  background-color: #17255480;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+
+  display: none;
+}
+
+.modal-active {
+  display: flex;
+}
+
+.modal-content {
+  background-color: var(--color-primary-950);
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--color-primary-15);
+  width: 480px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-head {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items:flex-start;
+}
+
+.modal-head-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.modal-close-button {
+  background: transparent;
+  border: none;
+  color: var(--color-primary-50);
+  font-size: 24px;
+  font-weight: 300;
+  margin-top: -4px;
+  margin-right: -8px;
+  padding: 0 10px;
+}
+
+.modal-body {
+  padding: 8px 0 20px;
+  overflow-wrap: break-word;
+}
+
+.modal-body-title {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.modal-foot {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.modal-button-cancel {
+  background-color: var(--color-primary-15);
+  color: var(--color-primary-50);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.modal-button-reset {
+  background-color: var(--color-red-500);
+  color: var(--color-primary-50);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
 }
 
 @media (max-width: 500px) {
