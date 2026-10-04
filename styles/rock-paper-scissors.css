@@ -226,4 +226,8 @@ button {
   .score {
     margin-bottom: 60px;
   }
+
+  .modal-content {
+    margin: 0 16px;
+  }
 }
