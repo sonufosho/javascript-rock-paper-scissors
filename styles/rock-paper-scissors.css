@@ -1,8 +1,10 @@
 :root {
-  --color-primary-15: #eff6ff26;
   --color-primary-50: #eff6ff;
+  --color-primary-50-alpha: #eff6ff26;
   --color-primary-500: #0066cc;
+  --color-primary-500-alpha: #0066ccd9;
   --color-primary-950: #172554;
+  --color-primary-950-alpha: #172554bf;
   --color-green-500: #22c55e;
   --color-red-500: #ef4444;
   --color-yellow-500: #eab308;
@@ -12,7 +14,6 @@ body {
   background-color: var(--color-primary-950);
   color: var(--color-primary-50);
   font-family: Poppins;
-  font-weight: 500;
   margin: 0;
 }
 
@@ -23,6 +24,16 @@ p {
 button {
   font-family: Poppins;
   font-weight: 500;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
 }
 
 .title {
@@ -79,21 +90,21 @@ button {
 }
 
 .result-green {
-  background-color: var(--color-primary-15);
+  background-color: var(--color-primary-50-alpha);
   color: var(--color-green-500);
   padding: 0 12px;
   border-radius: 8px;
 }
 
 .result-red {
-  background-color: var(--color-primary-15);
+  background-color: var(--color-primary-50-alpha);
   color: var(--color-red-500);
   padding: 0 12px;
   border-radius: 8px;
 }
 
 .result-yellow {
-  background-color: var(--color-primary-15);
+  background-color: var(--color-primary-50-alpha);
   color: var(--color-yellow-500);
   padding: 0 12px;
   border-radius: 8px;
@@ -114,9 +125,14 @@ button {
   border-radius: 9999px;
 }
 
+.reset-score-button:hover,
+.auto-play-button:hover {
+  background-color: var(--color-primary-500-alpha);
+}
+
 .modal {
   backdrop-filter: saturate(180%) blur(20px);
-  background-color: #17255480;
+  background-color: var(--color-primary-950-alpha);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -130,18 +146,23 @@ button {
   width: 100vw;
   height: 100vh;
 
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.95);
+  transition: 0.15s ease;
 }
 
 .modal-active {
-  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
 }
 
 .modal-content {
   background-color: var(--color-primary-950);
   padding: 16px 20px;
   border-radius: 12px;
-  border: 1px solid var(--color-primary-15);
+  border: 1px solid var(--color-primary-50-alpha);
   width: 480px;
 
   display: flex;
@@ -169,6 +190,11 @@ button {
   margin-top: -4px;
   margin-right: -8px;
   padding: 0 10px;
+  border-radius: 8px;
+}
+
+.modal-close-button:hover {
+  background-color: var(--color-primary-50-alpha);
 }
 
 .modal-body {
@@ -189,7 +215,7 @@ button {
 }
 
 .modal-button-cancel {
-  background-color: var(--color-primary-15);
+  background-color: var(--color-primary-50-alpha);
   color: var(--color-primary-50);
   border: none;
   padding: 8px 16px;
@@ -211,6 +237,10 @@ button {
     margin-bottom: 40px;
   }
 
+  .flex-row-container {
+    gap: 12px;
+  }
+
   .moves-button {
     border: none;
   }
@@ -224,7 +254,13 @@ button {
   }
 
   .score {
-    margin-bottom: 60px;
+    margin-bottom: 20px;
+  }
+
+  .reset-score-button,
+  .auto-play-button {
+    font-size: 14px;
+    padding: 8px 16px;
   }
 
   .modal-content {
