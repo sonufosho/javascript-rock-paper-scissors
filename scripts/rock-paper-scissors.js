@@ -1,8 +1,14 @@
-let score = {
+let score = JSON.parse(localStorage.getItem('score')) || {
   wins: 0,
   losses: 0,
   ties: 0
 };
+
+if (score.wins || score.losses || score.ties) {
+  document.querySelector('.js-score')
+    .innerHTML = `Wins: ${score.wins} Losses: ${score.losses} Ties: ${score.ties}`;
+}
+
 
 document.querySelector('.js-rock-button')
   .addEventListener('click', () => {
@@ -103,6 +109,8 @@ function playGame(playerMove) {
     }
   }
 
+  saveToStorage();
+
   document.querySelector('.js-moves')
     .innerHTML = `You <img src="images/${playerMove}.png"> - <img src="images/${computerMove}.png"> Computer`;
 
@@ -121,6 +129,8 @@ function resetScore() {
     losses: 0,
     ties: 0
   };
+
+  localStorage.removeItem('score');
 
   removeResultColors();
 
@@ -185,4 +195,8 @@ function showResetConfirmation() {
 function hideResetConfirmation() {
   document.querySelector('.js-modal')
     .classList.remove('modal-active');
+}
+
+function saveToStorage() {
+  localStorage.setItem('score', JSON.stringify(score));
 }
