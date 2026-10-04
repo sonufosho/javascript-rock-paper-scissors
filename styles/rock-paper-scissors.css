@@ -231,6 +231,10 @@ button:active {
 }
 
 @media (max-width: 500px) {
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
   .title {
     font-size: 32px;
     margin-top: 20px;
